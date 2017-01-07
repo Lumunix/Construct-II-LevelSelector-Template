@@ -1,0 +1,452 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2project>
+    <name>Level Selector</name>
+    <description>A Level Selector Project Example</description>
+    <version>1.2</version>
+    <author>YellowDragon</author>
+    <author-email>dylanpoljak@gmail.com</author-email>
+    <author-website>www.yellowdragon.net</author-website>
+    <app-id>Selector</app-id>
+    <unique-id>1uv7qb9av4sne</unique-id>
+    <saved-with-version>22700</saved-with-version>
+    <used-plugins>
+        <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
+        <plugin author="Scirra" id="Browser" version="1">Browser</plugin>
+        <plugin author="Scirra" id="Button" version="1">Button</plugin>
+        <plugin author="Scirra" id="Function" version="1">Function</plugin>
+        <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
+        <plugin author="Zack0Wack0/Scirra" id="WebStorage" version="1">WebStorage</plugin>
+    </used-plugins>
+    <used-behaviors>
+        <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
+        <behavior author="Scirra" id="Pin" version="1">Pin</behavior>
+        <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
+        <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
+    </used-behaviors>
+    <used-effects />
+    <configurations>
+        <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
+    </configurations>
+    <window-size>
+        <width>480</width>
+        <height>320</height>
+    </window-size>
+    <pixel-rounding>0</pixel-rounding>
+    <preview-effects>1</preview-effects>
+    <first-layout>LevelSelect</first-layout>
+    <use-loader-layout>0</use-loader-layout>
+    <configuration-settings>
+        <prop name="Clear background">Yes</prop>
+        <prop name="Enable WebGL">On</prop>
+        <prop name="Fullscreen in browser">Letterbox scale</prop>
+        <prop name="Hide address bar">No</prop>
+        <prop name="Loader style">Percentage text</prop>
+        <prop name="Physics engine">Box2D web</prop>
+        <prop name="Preview browser">Firefox</prop>
+        <prop name="Sampling">Linear</prop>
+        <prop name="Use iOS retina display">iPhone only</prop>
+    </configuration-settings>
+    <object-folder>
+        <object-folder name="LevelSelect">
+            <object-type name="Back" sid="7125059028241815">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Pin" sid="9013511834122056">
+                        <behavior id="Pin" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8443786053335927" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Level" sid="9406645335560272">
+                <plugin id="Text" />
+                <container>
+                    <type>Level</type>
+                    <type>LevelSelect</type>
+                </container>
+            </object-type>
+            <object-type name="Play" sid="6556162577865654">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Pin" sid="2639937420205099">
+                        <behavior id="Pin" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6807537932348372" speed="5">
+                        <frame duration="1" hotspotX="0.595238" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0.595238" y="0.186902" />
+                                <point x="0.809524" y="0.338174" />
+                                <point x="0.896826" y="0.5" />
+                                <point x="0.93254" y="0.770883" />
+                                <point x="0.595238" y="0.813098" />
+                                <point x="0.00396824" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="ConfirmMenu" sid="4961348997878859">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable comment="Y distance for calculating scroll" name="PrevTouchY" sid="9094522521643869" type="number" />
+                    <instance-variable comment="Curreny Y position for calculating scroll" name="CurTouchY" sid="7330548342887876" type="number" />
+                    <instance-variable comment="Diffrence in Y used in scrolling calculation" name="DiffY" sid="6837898831250649" type="number" />
+                    <instance-variable comment="Internal variable used for turning scrolling on and off" name="Active" sid="8762328550234315" type="boolean" />
+                </instance-variables>
+                <behaviors>
+                    <behavior-type name="Bullet" sid="3340238995697211">
+                        <behavior id="Bullet" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5254220949084356" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="TouchFollowMe" sid="4888166473124495">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="PrevTouchY" sid="5358109584100872" type="number" />
+                    <instance-variable name="CurTouchY" sid="7926826265568436" type="number" />
+                    <instance-variable name="DiffY" sid="8473296053008685" type="number" />
+                    <instance-variable name="Active" sid="2444155993817457" type="boolean" />
+                </instance-variables>
+                <behaviors>
+                    <behavior-type name="ScrollTo" sid="9951454118106385">
+                        <behavior id="scrollto" />
+                    </behavior-type>
+                    <behavior-type name="BoundToLayout" sid="5767427897493718">
+                        <behavior id="bound" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9647895509317308" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="LevelSelect" sid="7930620185938027">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable comment="The level number" name="Level" sid="6412692895011992" type="number" />
+                    <instance-variable comment="Internal variable used to disable clicking" name="Lock" sid="7860412658056891" type="number" />
+                    <instance-variable comment="Internal variable used for disabling clicking when another window is open" name="Active" sid="7580694621289857" type="boolean" />
+                    <instance-variable comment="The top score ofr the level" name="BestScore" sid="2508408269123203" type="number" />
+                    <instance-variable comment="Points needed to get 1 star" name="PointGoal1" sid="201998698016495" type="number" />
+                    <instance-variable comment="Points needed to get 2 stars" name="PointGoal2" sid="497323459671949" type="number" />
+                    <instance-variable comment="Points needed to get 3 stars" name="PointGoal3" sid="6322347328861928" type="number" />
+                </instance-variables>
+                <container>
+                    <type>Level</type>
+                    <type>LevelSelect</type>
+                </container>
+                <animation-folder>
+                    <animation framecount="5" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8352958922485864" speed="5">
+                        <frame duration="1" hotspotX="0.504132" hotspotY="0.504132" original-source="C:\Users\dylan\Downloads\smallstar.png">
+                            <collision-poly>
+                                <point x="0.0578512" y="0.0578512" />
+                                <point x="0.5" y="0.00413223" />
+                                <point x="0.946281" y="0.053719" />
+                                <point x="1" y="0.5" />
+                                <point x="0.950413" y="0.950413" />
+                                <point x="0.5" y="1" />
+                                <point x="0.053719" y="0.946281" />
+                                <point x="0" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.504132" hotspotY="0.504132">
+                            <collision-poly>
+                                <point x="0.351351" y="0.181395" />
+                                <point x="0.324324" y="0.0139535" />
+                                <point x="0.484234" y="0.00465129" />
+                                <point x="0.644144" y="0.0139537" />
+                                <point x="0.693694" y="0.15814" />
+                                <point x="0.828829" y="0.176744" />
+                                <point x="0.846847" y="0.255814" />
+                                <point x="0.756757" y="0.316279" />
+                                <point x="0.927928" y="0.440697" />
+                                <point x="0.963964" y="0.497674" />
+                                <point x="0.97973" y="0.716279" />
+                                <point x="0.893018" y="0.944186" />
+                                <point x="0.752252" y="0.990698" />
+                                <point x="0.495495" y="0.995349" />
+                                <point x="0.166666" y="0.969767" />
+                                <point x="0.105856" y="0.840697" />
+                                <point x="0.0585586" y="0.760465" />
+                                <point x="0.0157657" y="0.548255" />
+                                <point x="0.0225224" y="0.468604" />
+                                <point x="0.189189" y="0.339534" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.504132" hotspotY="0.504132">
+                            <collision-poly>
+                                <point x="0.351351" y="0.181395" />
+                                <point x="0.324324" y="0.0139535" />
+                                <point x="0.484234" y="0.00465129" />
+                                <point x="0.644144" y="0.0139537" />
+                                <point x="0.693694" y="0.15814" />
+                                <point x="0.828829" y="0.176744" />
+                                <point x="0.846847" y="0.255814" />
+                                <point x="0.756757" y="0.316279" />
+                                <point x="0.927928" y="0.440697" />
+                                <point x="0.963964" y="0.497674" />
+                                <point x="0.97973" y="0.716279" />
+                                <point x="0.893018" y="0.944186" />
+                                <point x="0.752252" y="0.990698" />
+                                <point x="0.495495" y="0.995349" />
+                                <point x="0.166666" y="0.969767" />
+                                <point x="0.105856" y="0.840697" />
+                                <point x="0.0585586" y="0.760465" />
+                                <point x="0.0157657" y="0.548255" />
+                                <point x="0.0225224" y="0.468604" />
+                                <point x="0.189189" y="0.339534" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.504132" hotspotY="0.504132">
+                            <collision-poly>
+                                <point x="0.351351" y="0.181395" />
+                                <point x="0.324324" y="0.0139535" />
+                                <point x="0.484234" y="0.00465129" />
+                                <point x="0.644144" y="0.0139537" />
+                                <point x="0.693694" y="0.15814" />
+                                <point x="0.828829" y="0.176744" />
+                                <point x="0.846847" y="0.255814" />
+                                <point x="0.756757" y="0.316279" />
+                                <point x="0.927928" y="0.440697" />
+                                <point x="0.963964" y="0.497674" />
+                                <point x="0.97973" y="0.716279" />
+                                <point x="0.893018" y="0.944186" />
+                                <point x="0.752252" y="0.990698" />
+                                <point x="0.495495" y="0.995349" />
+                                <point x="0.166666" y="0.969767" />
+                                <point x="0.105856" y="0.840697" />
+                                <point x="0.0585586" y="0.760465" />
+                                <point x="0.0157657" y="0.548255" />
+                                <point x="0.0225224" y="0.468604" />
+                                <point x="0.189189" y="0.339534" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\dylan\Desktop\lock.png">
+                            <collision-poly>
+                                <point x="0.0578512" y="0.0578512" />
+                                <point x="0.5" y="0.00413223" />
+                                <point x="0.946281" y="0.053719" />
+                                <point x="1" y="0.5" />
+                                <point x="0.950413" y="0.950413" />
+                                <point x="0.5" y="1" />
+                                <point x="0.053719" y="0.946281" />
+                                <point x="0" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="LevelWindow" sid="4018587285024858">
+                <plugin id="Text" />
+                <behaviors>
+                    <behavior-type name="Pin" sid="8496474915542789">
+                        <behavior id="Pin" />
+                    </behavior-type>
+                </behaviors>
+            </object-type>
+            <object-type name="BestScore" sid="8829832366559664">
+                <plugin id="Text" />
+                <behaviors>
+                    <behavior-type name="Pin" sid="7912238770996014">
+                        <behavior id="Pin" />
+                    </behavior-type>
+                </behaviors>
+            </object-type>
+            <object-type name="1star" sid="8555997548202162">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Pin" sid="5606303782315942">
+                        <behavior id="Pin" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4457661279383699" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\dylan\Desktop\1star.png">
+                            <collision-poly>
+                                <point x="0.0578512" y="0.0578512" />
+                                <point x="0.5" y="0.00413223" />
+                                <point x="0.946281" y="0.053719" />
+                                <point x="1" y="0.5" />
+                                <point x="0.950413" y="0.950413" />
+                                <point x="0.5" y="1" />
+                                <point x="0.053719" y="0.946281" />
+                                <point x="0" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="2star" sid="6759966411440566">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Pin" sid="6456798837094299">
+                        <behavior id="Pin" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6415339855993505" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\dylan\Desktop\2star.png">
+                            <collision-poly>
+                                <point x="0.0578512" y="0.0578512" />
+                                <point x="0.5" y="0.00413223" />
+                                <point x="0.946281" y="0.053719" />
+                                <point x="1" y="0.5" />
+                                <point x="0.950413" y="0.950413" />
+                                <point x="0.5" y="1" />
+                                <point x="0.053719" y="0.946281" />
+                                <point x="0" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="3star" sid="2141551391115441">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Pin" sid="47334026724818">
+                        <behavior id="Pin" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7822686128479352" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\dylan\Desktop\3star.png">
+                            <collision-poly>
+                                <point x="0.0578512" y="0.0578512" />
+                                <point x="0.5" y="0.00413223" />
+                                <point x="0.946281" y="0.053719" />
+                                <point x="1" y="0.5" />
+                                <point x="0.950413" y="0.950413" />
+                                <point x="0.5" y="1" />
+                                <point x="0.053719" y="0.946281" />
+                                <point x="0" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="PointGoal1" sid="7053859088856263">
+                <plugin id="Text" />
+                <behaviors>
+                    <behavior-type name="Pin" sid="3228933587934105">
+                        <behavior id="Pin" />
+                    </behavior-type>
+                </behaviors>
+            </object-type>
+            <object-type name="PointGoal2" sid="9430770469089002">
+                <plugin id="Text" />
+                <behaviors>
+                    <behavior-type name="Pin" sid="1058147752990804">
+                        <behavior id="Pin" />
+                    </behavior-type>
+                </behaviors>
+            </object-type>
+            <object-type name="PointGoal3" sid="2714130104946548">
+                <plugin id="Text" />
+                <behaviors>
+                    <behavior-type name="Pin" sid="5543911021571851">
+                        <behavior id="Pin" />
+                    </behavior-type>
+                </behaviors>
+            </object-type>
+        </object-folder>
+        <object-folder name="LevelDemo">
+            <object-type name="SubtractScore" sid="2509385374292925">
+                <plugin id="Button" />
+            </object-type>
+            <object-type name="LevelDemo" sid="7015800942956943">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="AddScore" sid="1250824713548784">
+                <plugin id="Button" />
+            </object-type>
+            <object-type name="LevelScoreDemo" sid="7932229056650837">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="LevelSelectBack" sid="727737746230115">
+                <plugin id="Button" />
+            </object-type>
+            <object-type name="ClearSaves" sid="5333648358362032">
+                <plugin id="Button" />
+            </object-type>
+        </object-folder>
+        <object-type name="Touch" sid="7687299208154644">
+            <plugin id="Touch" />
+        </object-type>
+        <object-type name="Audio" sid="2374489276017546">
+            <plugin id="Audio" />
+        </object-type>
+        <object-type name="Mouse" sid="4519331032093671">
+            <plugin id="Mouse" />
+        </object-type>
+        <object-type name="Function" sid="6664372379186005">
+            <plugin id="Function" />
+        </object-type>
+        <object-type name="WebStorage" sid="3128617136387792">
+            <plugin id="WebStorage" />
+        </object-type>
+        <object-type name="Browser" sid="6189100681145489">
+            <plugin id="Browser" />
+        </object-type>
+    </object-folder>
+    <families />
+    <layout-folder>
+        <layout>LevelSelect.xml</layout>
+        <layout>Level1.xml</layout>
+    </layout-folder>
+    <event-folder>
+        <event-sheet>Global Variables.xml</event-sheet>
+        <event-sheet>LevelDemo.xml</event-sheet>
+        <event-sheet>LevelSelect.xml</event-sheet>
+    </event-folder>
+    <global-instances>
+        <global-instance type="Touch" uid="13">
+            <properties>
+                <use-mouse-input>Yes</use-mouse-input>
+            </properties>
+        </global-instance>
+        <global-instance type="Audio" uid="121">
+            <properties>
+                <timescale-audio>Off</timescale-audio>
+                <saveload>All</saveload>
+                <play-in-background>No</play-in-background>
+                <positioned-audio></positioned-audio>
+                <panning-model>HRTF</panning-model>
+                <distance-model>Inverse</distance-model>
+                <listener-z-height>600</listener-z-height>
+                <reference-distance>600</reference-distance>
+                <maximum-distance>10000</maximum-distance>
+                <roll-off-factor>1</roll-off-factor>
+            </properties>
+        </global-instance>
+        <global-instance type="Mouse" uid="144" />
+        <global-instance type="Function" uid="734" />
+        <global-instance type="WebStorage" uid="735" />
+        <global-instance type="Browser" uid="806" />
+    </global-instances>
+    <sounds-folder />
+    <music-folder />
+    <files-folder>
+        <file-folder name="Icons">
+            <file name="icon-16.png" />
+            <file name="icon-32.png" />
+            <file name="icon-114.png" />
+            <file name="icon-128.png" />
+            <file name="loading-logo.png" />
+            <file name="icon-256.png" />
+        </file-folder>
+    </files-folder>
+</c2project>

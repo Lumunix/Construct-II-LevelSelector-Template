@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>LevelDemo</name>
+    <events>
+        <event-group description="Contains the functions of the demo screen" sid="5190464492136092" title="LevelDemo">
+            <sub-events>
+                <event-block sid="8515124845999762">
+                    <conditions>
+                        <condition id="0" name="On clicked" sid="3837404722770313" type="LevelSelectBack" />
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="7433153948691777" type="System">
+                            <param id="0" name="Layout">LevelSelect</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="8767540136551998">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="1777310530153587" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="7818951412171771" type="LevelDemo">
+                            <param id="0" name="Text">&quot;Level :&quot; &amp; LevelNumber</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="5019755298028192">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="1598578610203941" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="336758794342858" type="LevelScoreDemo">
+                            <param id="0" name="Text">&quot;Score: &quot; &amp; TotalScore</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="906840704802515">
+                    <conditions>
+                        <condition id="0" name="On clicked" sid="9878291041574636" type="AddScore" />
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="3417949186363994" type="System">
+                            <param id="0" name="Variable">TotalScore</param>
+                            <param id="1" name="Value">100</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="46968119555174">
+                    <conditions>
+                        <condition id="0" name="On clicked" sid="1267017980949589" type="SubtractScore" />
+                    </conditions>
+                    <actions>
+                        <action id="-11" name="Subtract from" sid="8206520256268051" type="System">
+                            <param id="0" name="Variable">TotalScore</param>
+                            <param id="1" name="Value">100</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="Clear Save data and reload level select" sid="7033108106264861" title="ClearSaves">
+            <sub-events>
+                <event-block sid="5674601427912474">
+                    <conditions>
+                        <condition id="0" name="On clicked" sid="9877504897924137" type="ClearSaves" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Clear local storage" sid="1713005391700759" type="WebStorage" />
+                        <action id="-21" name="Reset global variables" sid="9937649084109156" type="System" />
+                        <action id="-2" name="Go to layout" sid="5954739191919231" type="System">
+                            <param id="0" name="Layout">LevelSelect</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="Saves the players score and level progress" sid="5435477092194035" title="Level and Score Saving">
+            <sub-events>
+                <event-block sid="6574476570344936">
+                    <conditions>
+                        <condition id="-3" name="On end of layout" sid="4746498981368593" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <comment>1</comment>
+                        <event-block sid="4959794910473644">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="9371703509371283" type="System">
+                                    <param id="0" name="Variable">TotalScore</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">int(WebStorage.LocalValue (&quot;Level&quot;&amp;LevelNumber&amp;&quot;PointGoal1&quot;))</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set local value" sid="8473931910336266" type="WebStorage">
+                                    <param id="0" name="Key">&quot;Level&quot;&amp;LevelNumber</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>2</comment>
+                        <event-block sid="4657961617806229">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="3718820390872735" type="System">
+                                    <param id="0" name="Variable">TotalScore</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">int(WebStorage.LocalValue (&quot;Level&quot;&amp;LevelNumber&amp;&quot;PointGoal2&quot;))</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set local value" sid="109410504166879" type="WebStorage">
+                                    <param id="0" name="Key">&quot;Level&quot;&amp;LevelNumber</param>
+                                    <param id="1" name="Value">2</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>3</comment>
+                        <event-block sid="5335044338186924">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="4097053816824859" type="System">
+                                    <param id="0" name="Variable">TotalScore</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">int(WebStorage.LocalValue (&quot;Level&quot;&amp;LevelNumber&amp;&quot;PointGoal3&quot;))</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set local value" sid="2652836158089638" type="WebStorage">
+                                    <param id="0" name="Key">&quot;Level&quot;&amp;LevelNumber</param>
+                                    <param id="1" name="Value">3</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Save Best Score</comment>
+                        <event-block sid="5401083555516894">
+                            <conditions>
+                                <condition id="3" inverted="1" name="Local key exists" sid="2087560682176345" type="WebStorage">
+                                    <param id="0" name="Key">&quot;Level&quot;&amp;LevelNumber&amp;&quot;Score&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set local value" sid="9114421083532757" type="WebStorage">
+                                    <param id="0" name="Key">&quot;Level&quot;&amp;LevelNumber&amp;&quot;Score&quot;</param>
+                                    <param id="1" name="Value">TotalScore</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="6797898653351173">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="9559254308287686" type="System" />
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="2472364827762411">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="9089822826028417" type="System">
+                                            <param id="0" name="Variable">TotalScore</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Value">int(WebStorage.LocalValue (&quot;Level&quot;&amp;LevelNumber&amp;&quot;Score&quot;))</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Set local value" sid="7421167872703321" type="WebStorage">
+                                            <param id="0" name="Key">&quot;Level&quot;&amp;LevelNumber&amp;&quot;Score&quot;</param>
+                                            <param id="1" name="Value">TotalScore</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <comment>Unlock Next Level If Relevant and Reset Variables</comment>
+                        <event-block sid="6136133653189317">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="4335778381382057" type="System">
+                                    <param id="0" name="Variable">LevelNumber</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Value">TotalLevels</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="7704634994529607">
+                                    <conditions>
+                                        <condition id="3" inverted="1" name="Local key exists" sid="4960671805918829" type="WebStorage">
+                                            <param id="0" name="Key">&quot;Level&quot;&amp;LevelNumber +1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Set local value" sid="1478392112092911" type="WebStorage">
+                                            <param id="0" name="Key"> &quot;Level&quot;&amp;LevelNumber +1</param>
+                                            <param id="1" name="Value">&quot;0&quot;</param>
+                                        </action>
+                                        <action id="-21" name="Reset global variables" sid="3763142495926653" type="System" />
+                                    </actions>
+                                </event-block>
+                                <event-block sid="7524459241637016">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="6499016935300565" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-21" name="Reset global variables" sid="5579496235375353" type="System" />
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

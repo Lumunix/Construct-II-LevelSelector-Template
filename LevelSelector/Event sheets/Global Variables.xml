@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Global Variables</name>
+    <events>
+        <comment>Demo mode forces the level select screen to go to one layout, in this case &quot;Level 1&quot;, turn off to allow for multiple layouts, etc &quot;Level 1&quot;, &quot;Level 2&quot; etc</comment>
+        <variable comment='0 for on, Default goes to &quot;Level1&quot;' constant="1" name="DEMOMODE" sid="467206775973631" static="0" type="number">0</variable>
+        <comment>Set to however many levels you have</comment>
+        <variable comment="Number of total levels " constant="0" name="TotalLevels" sid="9627434060031667" static="0" type="number">50</variable>
+        <comment>Scroll speed of the level selection window, Tip: make this a user option in your game</comment>
+        <variable comment="Scroll Speed on Level Select" constant="1" name="SCROLLSPEED" sid="6659314869902611" static="0" type="number">0.35</variable>
+        <comment>Internal Level Selector Variables, Do not change</comment>
+        <variable comment="Position of Scroll Window" constant="0" name="ScrollPos" sid="2649172724721767" static="0" type="number">0</variable>
+        <variable comment="Point goal to get 1 star" constant="0" name="TargetGoal1" sid="8510755477191447" static="0" type="number">0</variable>
+        <variable comment="Point goal to get 2 stars" constant="0" name="TargetGoal2" sid="5735020825642253" static="0" type="number">0</variable>
+        <variable comment="Point goal to get 3 stars" constant="0" name="TargetGoal3" sid="6513262521109972" static="0" type="number">0</variable>
+        <variable comment="Level to load using level select" constant="0" name="LevelNumber" sid="8154573039328396" static="0" type="number">0</variable>
+        <variable comment="Best score from particular level" constant="0" name="BestScore" sid="5097388291014348" static="0" type="number">0</variable>
+        <variable comment="Score from level" constant="0" name="TotalScore" sid="2368921653602437" static="0" type="number">0</variable>
+    </events>
+</c2eventsheet>
